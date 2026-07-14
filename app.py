@@ -5,19 +5,15 @@ import pandas as pd
 import os
 from google import genai
 
-client = genai.Client(
-    api_key=st.secrets["GEMINI_API_KEY"]
-)
+client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
-model_path = os.path.join(os.path.dirname(__file__), "house_price_model.pkl")
+# ---- Build reliable file paths ----
+BASE_DIR = os.path.dirname(__file__)
+model = joblib.load(os.path.join(BASE_DIR, "house_price_model.pkl"))
+le_city = joblib.load(os.path.join(BASE_DIR, "city_encoder.pkl"))
+le_type = joblib.load(os.path.join(BASE_DIR, "property_type_encoder.pkl"))
 
-model = joblib.load(model_path)
-
-model = joblib.load('house_price_model.pkl')
-le_city = joblib.load('city_encoder.pkl')
-le_type = joblib.load('property_type_encoder.pkl')
-
-df = pd.read_csv("zameen-updated.csv")
+df = pd.read_csv(os.path.join(BASE_DIR, "zameen-updated.csv"))
 df = df[(df['purpose'] == 'For Sale') & (df['price'] > 100000) &
         (df['bedrooms'] > 0) & (df['baths'] > 0) &
         (df['property_type'].isin(['House', 'Flat']))].copy()
