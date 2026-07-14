@@ -1,5 +1,4 @@
 .env
 __pycache__/
 *.pyc
-house_price_model.pkl
 zameen-updated.csv

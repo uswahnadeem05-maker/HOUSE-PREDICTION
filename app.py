@@ -9,6 +9,10 @@ client = genai.Client(
     api_key=st.secrets["GEMINI_API_KEY"]
 )
 
+model_path = os.path.join(os.path.dirname(__file__), "house_price_model.pkl")
+
+model = joblib.load(model_path)
+
 model = joblib.load('house_price_model.pkl')
 le_city = joblib.load('city_encoder.pkl')
 le_type = joblib.load('property_type_encoder.pkl')
