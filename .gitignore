@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 zameen-updated.csv
+house_price_model.pkl
+*.pkl
