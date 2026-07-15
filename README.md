@@ -28,8 +28,9 @@ This project predicts house prices across Pakistan using machine learning, train
 
 ## 🖥️ Preview
 
-<img width="860" height="371" alt="house str 2" src="https://github.com/user-attachments/assets/0e155d7d-956f-4630-8d0b-664552fc77cb" />
 <img width="767" height="262" alt="house str 1" src="https://github.com/user-attachments/assets/2fc283ca-183c-4689-a295-854669128620" />
+<img width="860" height="371" alt="house str 2" src="https://github.com/user-attachments/assets/0e155d7d-956f-4630-8d0b-664552fc77cb" />
+
 
 ## 🛠️ Tech Stack
 
